@@ -122,8 +122,12 @@ echo "Custom CSS and logo files copied"
 echo "Verificando archivos estáticos personalizados"
 python manage.py check_static_files
 
+
 echo "Verificando URLs de imágenes"
 python manage.py check_image_urls
+
+echo "Probando URLs de imágenes directamente"
+python manage.py test_image_urls
 
 echo "Done"
 
