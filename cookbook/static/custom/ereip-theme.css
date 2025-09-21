@@ -16,6 +16,41 @@
   --ereip-gradient-warm: linear-gradient(135deg, #f7dc6f 0%, #f8c471 100%);
 }
 
+/* FORZAR ESTILOS CON MÁXIMA ESPECIFICIDAD */
+body .navbar.ereip-navbar,
+body #id_main_nav.navbar.ereip-navbar,
+html body .navbar.ereip-navbar {
+  background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+}
+
+body .navbar-brand img,
+body #id_main_nav .navbar-brand img,
+html body .navbar-brand img {
+  filter: brightness(0) invert(1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+body .btn-primary,
+body .btn.btn-primary,
+html body .btn-primary {
+  background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3) !important;
+}
+
+body .btn-primary:hover,
+body .btn.btn-primary:hover,
+html body .btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.4) !important;
+  background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
+}
+
 /* Navbar moderno */
 .navbar.ereip-navbar {
   background: var(--ereip-gradient) !important;
@@ -91,27 +126,37 @@
   border-left: 4px solid var(--ereip-danger) !important;
 }
 
-/* Enlaces modernos */
-a {
-  color: var(--ereip-primary) !important;
+/* Enlaces modernos con máxima especificidad */
+body a,
+html body a {
+  color: #b8a9d9 !important;
   text-decoration: none !important;
   transition: color 0.3s ease !important;
 }
 
-a:hover {
-  color: var(--ereip-secondary) !important;
+body a:hover,
+html body a:hover {
+  color: #a8d8ea !important;
 }
 
-/* Títulos modernos */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.card-title,
-.display-4 {
-  background: var(--ereip-gradient) !important;
+/* Títulos modernos con máxima especificidad */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .card-title,
+body .display-4,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body .card-title,
+html body .display-4 {
+  background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -206,27 +251,35 @@ h6,
   padding: 2rem !important;
 }
 
-/* Forzar colores en cards del dashboard */
-.ereip-card-primary,
-.card.ereip-card-primary {
+/* Forzar colores en cards del dashboard con máxima especificidad */
+body .ereip-card-primary,
+body .card.ereip-card-primary,
+html body .ereip-card-primary,
+html body .card.ereip-card-primary {
   background: linear-gradient(135deg, #e8d5f2 0%, #f4f6f7 100%) !important;
-  border-left: 4px solid var(--ereip-primary) !important;
+  border-left: 4px solid #b8a9d9 !important;
 }
 
-.ereip-card-success,
-.card.ereip-card-success {
+body .ereip-card-success,
+body .card.ereip-card-success,
+html body .ereip-card-success,
+html body .card.ereip-card-success {
   background: linear-gradient(135deg, #d1f2eb 0%, #f4f6f7 100%) !important;
-  border-left: 4px solid var(--ereip-success) !important;
+  border-left: 4px solid #a9dfbf !important;
 }
 
-.ereip-card-warning,
-.card.ereip-card-warning {
+body .ereip-card-warning,
+body .card.ereip-card-warning,
+html body .ereip-card-warning,
+html body .card.ereip-card-warning {
   background: linear-gradient(135deg, #fef9e7 0%, #f4f6f7 100%) !important;
-  border-left: 4px solid var(--ereip-warning) !important;
+  border-left: 4px solid #f8c471 !important;
 }
 
-.ereip-card-danger,
-.card.ereip-card-danger {
+body .ereip-card-danger,
+body .card.ereip-card-danger,
+html body .ereip-card-danger,
+html body .card.ereip-card-danger {
   background: linear-gradient(135deg, #fadbd8 0%, #f4f6f7 100%) !important;
-  border-left: 4px solid var(--ereip-danger) !important;
+  border-left: 4px solid #f1948a !important;
 }
