@@ -28,11 +28,13 @@ else
     exit 1
 fi
 
-# Copiar archivos CSS personalizados
-echo "Copying custom CSS files..."
+# Copiar archivos CSS personalizados y logo
+echo "Copying custom CSS files and logo..."
 mkdir -p /opt/recipes/staticfiles/custom
+mkdir -p /opt/recipes/staticfiles/assets
 cp /opt/recipes/cookbook/static/custom/ereip-theme.css /opt/recipes/staticfiles/custom/
-echo "Custom CSS files copied to staticfiles"
+cp /opt/recipes/cookbook/static/assets/ereip-logo.svg /opt/recipes/staticfiles/assets/
+echo "Custom CSS and logo files copied to staticfiles"
 
 # Volver al directorio principal
 cd /opt/recipes

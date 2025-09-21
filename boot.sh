@@ -95,9 +95,6 @@ python manage.py check_media_volume
 echo "Diagnóstico detallado del volumen de media"
 python debug_media_volume.py
 
-echo "Verificando archivos estáticos personalizados"
-python manage.py check_static_files
-
 if [ "${PLUGINS_BUILD}" -eq 1 ]; then
     echo "Running yarn build at startup because PLUGINS_BUILD is enabled"
     python plugin.py
@@ -121,6 +118,12 @@ mkdir -p ${STATIC_ROOT:-/opt/recipes/staticfiles}/assets
 cp /opt/recipes/cookbook/static/custom/ereip-theme.css ${STATIC_ROOT:-/opt/recipes/staticfiles}/custom/
 cp /opt/recipes/cookbook/static/assets/ereip-logo.svg ${STATIC_ROOT:-/opt/recipes/staticfiles}/assets/
 echo "Custom CSS and logo files copied"
+
+echo "Verificando archivos estáticos personalizados"
+python manage.py check_static_files
+
+echo "Verificando URLs de imágenes"
+python manage.py check_image_urls
 
 echo "Done"
 

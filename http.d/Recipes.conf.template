@@ -6,10 +6,11 @@ server {
   client_max_body_size 128M;
 
   # serve media files
-  location /media {
-    alias ${MEDIA_ROOT};
+  location /media/ {
+    alias ${MEDIA_ROOT}/;
     expires 1y;
     add_header Cache-Control "public, immutable";
+    try_files $uri =404;
   }
 
   # serve service worker under main path
