@@ -43,6 +43,8 @@ Configura las siguientes variables de entorno en Railway:
 
 - `ENABLE_SIGNUP`: `1` (para permitir registro de usuarios)
 - `TZ`: `Europe/Madrid` (o tu zona horaria)
+- `LANGUAGE_CODE`: `es` (para interfaz en español)
+- `MEDIA_ROOT`: `/opt/recipes/mediafiles` (directorio para imágenes)
 - `LOG_LEVEL`: `WARNING`
 
 #### Variables para funcionalidades avanzadas:

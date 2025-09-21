@@ -89,6 +89,9 @@ python manage.py migrate
 echo "Installing PostgreSQL extensions"
 python manage.py install_unaccent
 
+echo "Verificando volumen de media"
+python manage.py check_media_volume
+
 if [ "${PLUGINS_BUILD}" -eq 1 ]; then
     echo "Running yarn build at startup because PLUGINS_BUILD is enabled"
     python plugin.py
@@ -108,7 +111,17 @@ python manage.py collectstatic --noinput
 
 echo "Done"
 
+# Configurar volumen de Railway para imágenes
+echo "Configurando volumen de Railway para imágenes..."
+mkdir -p ${MEDIA_ROOT:-/opt/recipes/mediafiles}
 chmod -R 755 ${MEDIA_ROOT:-/opt/recipes/mediafiles}
+
+# Verificar que el directorio de media es escribible
+if [ -w "${MEDIA_ROOT:-/opt/recipes/mediafiles}" ]; then
+    echo "✅ Directorio de media configurado correctamente"
+else
+    echo "❌ Error: No se puede escribir en el directorio de media"
+fi
 
 ipv6_disable=$(cat /sys/module/ipv6/parameters/disable)
 
