@@ -91,6 +91,14 @@ if [ "${PLUGINS_BUILD}" -eq 1 ]; then
     python plugin.py
 fi
 
+echo "Building frontend assets..."
+if [ -f "/opt/recipes/build_frontend.sh" ]; then
+    chmod +x /opt/recipes/build_frontend.sh
+    /opt/recipes/build_frontend.sh
+else
+    echo "Frontend build script not found, skipping..."
+fi
+
 echo "Collecting static files, this may take a while..."
 
 python manage.py collectstatic --noinput

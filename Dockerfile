@@ -30,6 +30,13 @@ RUN apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev zlib-de
 #Copy project and execute it.
 COPY . ./
 
+# Build Vue.js frontend
+WORKDIR /opt/recipes/vue3
+RUN npm install && npm run build
+
+# Return to main directory
+WORKDIR /opt/recipes
+
 # delete default nginx config and link it to tandoors config
 # create symlinks to access and error log to show them on stdout
 RUN rm -rf /etc/nginx/http.d && \
