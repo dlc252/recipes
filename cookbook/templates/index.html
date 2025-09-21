@@ -3,7 +3,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% trans "Cookbook" %}{% endblock %}
+{% block title %}🏠 Mi Cocina - Dashboard{% endblock %}
 
 {% block extra_head %}
     {{ filter.form.media }}
@@ -16,6 +16,56 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Dashboard EREIP Style -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center py-5">
+                    <h1 class="display-4 mb-3">🏠 Mi Cocina</h1>
+                    <p class="lead text-muted mb-4">Gestiona tus recetas con el poder de la investigación</p>
+                    <div class="row">
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card border-0 ereip-card-primary">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-utensils fa-2x mb-2" style="color: var(--ereip-primary);"></i>
+                                    <h5 class="card-title">{{ recipes|length }}</h5>
+                                    <small class="text-muted">Recetas</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card border-0 ereip-card-success">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-tags fa-2x mb-2" style="color: var(--ereip-success);"></i>
+                                    <h5 class="card-title">12</h5>
+                                    <small class="text-muted">Categorías</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card border-0 ereip-card-warning">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-clock fa-2x mb-2" style="color: var(--ereip-warning);"></i>
+                                    <h5 class="card-title">25</h5>
+                                    <small class="text-muted">Min Promedio</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="card border-0 ereip-card-danger">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-star fa-2x mb-2" style="color: var(--ereip-danger);"></i>
+                                    <h5 class="card-title">4.8</h5>
+                                    <small class="text-muted">Rating</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% if filter %}
         <div class="row">
             <div class="col">
@@ -39,11 +89,12 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <button class="dropdown-item" type="button"
-                                                onclick="location.href='{% url 'new_recipe' %}'"><i
-                                                class="fas fa-plus-circle fa-fw"></i> {% trans 'New Recipe' %}</button>
+                                                onclick="location.href='{% url 'new_recipe' %}'">
+                                            <i class="fas fa-plus-circle fa-fw"></i> {% trans 'New Recipe' %}
+                                        </button>
                                         <button class="dropdown-item" type="button"
-                                                onclick="location.href='{% url 'data_import_url' %}'"><i
-                                                class="fas fa-cloud-download-alt fa-fw"></i> {% trans 'Import Recipe' %}
+                                                onclick="location.href='{% url 'data_import_url' %}'">
+                                            <i class="fas fa-cloud-download-alt fa-fw"></i> {% trans 'Import Recipe' %}
                                         </button>
                                         <button data-toggle="collapse" href="#collapse_adv_search"
                                                 role="button" class="dropdown-item"

@@ -1,0 +1,185 @@
+/* Mi Cocina EREIP - Tema personalizado inspirado en EREIP */
+
+:root {
+  /* Colores Pantone pastel más lindos */
+  --ereip-primary: #b8a9d9; /* Pantone 2645 C - Lavanda suave */
+  --ereip-secondary: #a8d8ea; /* Pantone 317 C - Azul cielo */
+  --ereip-accent: #f7dc6f; /* Pantone 1205 C - Amarillo miel */
+  --ereip-success: #a9dfbf; /* Pantone 351 C - Verde menta */
+  --ereip-warning: #f8c471; /* Pantone 137 C - Naranja melocotón */
+  --ereip-danger: #f1948a; /* Pantone 169 C - Rosa coral */
+  --ereip-neutral: #f4f6f7; /* Pantone Cool Gray 1 C - Gris muy claro */
+
+  /* Gradientes pastel suaves */
+  --ereip-gradient: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%);
+  --ereip-gradient-light: linear-gradient(135deg, #e8d5f2 0%, #d1f2eb 100%);
+  --ereip-gradient-warm: linear-gradient(135deg, #f7dc6f 0%, #f8c471 100%);
+}
+
+/* Navbar moderno */
+.navbar.ereip-navbar {
+  background: var(--ereip-gradient) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: none !important;
+}
+
+.navbar-brand img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.1);
+}
+
+/* Botones modernos */
+.btn-primary {
+  background: var(--ereip-gradient) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3) !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Cards modernas */
+.card {
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Cards con colores pastel */
+.ereip-card-primary {
+  background: linear-gradient(135deg, #e8d5f2 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-primary) !important;
+}
+
+.ereip-card-success {
+  background: linear-gradient(135deg, #d1f2eb 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-success) !important;
+}
+
+.ereip-card-warning {
+  background: linear-gradient(135deg, #fef9e7 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-warning) !important;
+}
+
+.ereip-card-danger {
+  background: linear-gradient(135deg, #fadbd8 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-danger) !important;
+}
+
+/* Enlaces modernos */
+a {
+  color: var(--ereip-primary) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+a:hover {
+  color: var(--ereip-secondary) !important;
+}
+
+/* Títulos modernos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: var(--ereip-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 700 !important;
+}
+
+/* Formularios modernos */
+.form-control {
+  border-radius: 8px !important;
+  border: 2px solid #e5e7eb !important;
+  transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+  border-color: var(--ereip-primary) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Badges modernos */
+.badge {
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+}
+
+.badge-primary {
+  background: var(--ereip-gradient) !important;
+}
+
+/* Animaciones sutiles */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card,
+.btn,
+.form-control {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 32px !important;
+  }
+
+  .card {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Efectos de hover mejorados */
+.btn:hover {
+  transform: translateY(-1px) !important;
+}
+
+.card:hover .card-title {
+  color: var(--ereip-primary) !important;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ereip-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ereip-secondary);
+}
