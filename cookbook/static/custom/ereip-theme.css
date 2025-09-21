@@ -19,7 +19,14 @@
 /* Navbar moderno */
 .navbar.ereip-navbar {
   background: var(--ereip-gradient) !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+}
+
+/* Forzar navbar con mayor especificidad */
+#id_main_nav.navbar.ereip-navbar {
+  background: var(--ereip-gradient) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
   border: none !important;
 }
 
@@ -33,7 +40,8 @@
 }
 
 /* Botones modernos */
-.btn-primary {
+.btn-primary,
+.btn.btn-primary {
   background: var(--ereip-gradient) !important;
   border: none !important;
   border-radius: 8px !important;
@@ -42,9 +50,11 @@
   box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3) !important;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn.btn-primary:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 8px rgba(99, 102, 241, 0.4) !important;
+  background: var(--ereip-gradient) !important;
 }
 
 /* Cards modernas */
@@ -98,7 +108,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.card-title,
+.display-4 {
   background: var(--ereip-gradient) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -182,4 +194,39 @@ h6 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--ereip-secondary);
+}
+
+/* Estilos específicos para el dashboard */
+.row.mb-4 .card {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%) !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.row.mb-4 .card-body {
+  padding: 2rem !important;
+}
+
+/* Forzar colores en cards del dashboard */
+.ereip-card-primary,
+.card.ereip-card-primary {
+  background: linear-gradient(135deg, #e8d5f2 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-primary) !important;
+}
+
+.ereip-card-success,
+.card.ereip-card-success {
+  background: linear-gradient(135deg, #d1f2eb 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-success) !important;
+}
+
+.ereip-card-warning,
+.card.ereip-card-warning {
+  background: linear-gradient(135deg, #fef9e7 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-warning) !important;
+}
+
+.ereip-card-danger,
+.card.ereip-card-danger {
+  background: linear-gradient(135deg, #fadbd8 0%, #f4f6f7 100%) !important;
+  border-left: 4px solid var(--ereip-danger) !important;
 }
