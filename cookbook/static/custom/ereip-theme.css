@@ -19,7 +19,20 @@
 /* FORZAR ESTILOS CON MÁXIMA ESPECIFICIDAD */
 body .navbar.ereip-navbar,
 body #id_main_nav.navbar.ereip-navbar,
-html body .navbar.ereip-navbar {
+html body .navbar.ereip-navbar,
+html body .navbar.ereip-navbar.navbar-expand-lg,
+html body #id_main_nav.navbar.ereip-navbar.navbar-expand-lg {
+  background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+}
+
+/* Forzar navbar en TODAS las páginas */
+.navbar,
+.navbar.navbar-expand-lg,
+#id_main_nav,
+#id_main_nav.navbar,
+#id_main_nav.navbar.navbar-expand-lg {
   background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
   border: none !important;
@@ -34,7 +47,9 @@ html body .navbar-brand img {
 
 body .btn-primary,
 body .btn.btn-primary,
-html body .btn-primary {
+html body .btn-primary,
+.btn-primary,
+.btn.btn-primary {
   background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
   border: none !important;
   border-radius: 8px !important;
@@ -105,6 +120,17 @@ html body .btn-primary:hover {
   box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Forzar cards en TODAS las páginas */
+.card,
+.card.card-body,
+.card.card-header,
+.card.card-footer {
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
 /* Cards con colores pastel */
 .ereip-card-primary {
   background: linear-gradient(135deg, #e8d5f2 0%, #f4f6f7 100%) !important;
@@ -128,14 +154,16 @@ html body .btn-primary:hover {
 
 /* Enlaces modernos con máxima especificidad */
 body a,
-html body a {
+html body a,
+a {
   color: #b8a9d9 !important;
   text-decoration: none !important;
   transition: color 0.3s ease !important;
 }
 
 body a:hover,
-html body a:hover {
+html body a:hover,
+a:hover {
   color: #a8d8ea !important;
 }
 
@@ -155,7 +183,15 @@ html body h4,
 html body h5,
 html body h6,
 html body .card-title,
-html body .display-4 {
+html body .display-4,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title,
+.display-4 {
   background: linear-gradient(135deg, #b8a9d9 0%, #a8d8ea 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
