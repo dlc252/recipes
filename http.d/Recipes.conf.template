@@ -8,7 +8,8 @@ server {
   # serve media files
   location /media {
     alias ${MEDIA_ROOT};
-    add_header Content-Disposition 'attachment; filename="$args"';
+    expires 1y;
+    add_header Cache-Control "public, immutable";
   }
 
   # serve service worker under main path
