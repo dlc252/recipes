@@ -86,6 +86,9 @@ echo "Migrating database"
 
 python manage.py migrate
 
+echo "Installing PostgreSQL extensions"
+python manage.py install_unaccent
+
 if [ "${PLUGINS_BUILD}" -eq 1 ]; then
     echo "Running yarn build at startup because PLUGINS_BUILD is enabled"
     python plugin.py
