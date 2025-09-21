@@ -28,5 +28,11 @@ else
     exit 1
 fi
 
+# Copiar archivos CSS personalizados
+echo "Copying custom CSS files..."
+mkdir -p /opt/recipes/staticfiles/custom
+cp /opt/recipes/cookbook/static/custom/ereip-theme.css /opt/recipes/staticfiles/custom/
+echo "Custom CSS files copied to staticfiles"
+
 # Volver al directorio principal
 cd /opt/recipes
