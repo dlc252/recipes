@@ -92,6 +92,9 @@ python manage.py install_unaccent
 echo "Verificando volumen de media"
 python manage.py check_media_volume
 
+echo "Diagnóstico detallado del volumen de media"
+python debug_media_volume.py
+
 if [ "${PLUGINS_BUILD}" -eq 1 ]; then
     echo "Running yarn build at startup because PLUGINS_BUILD is enabled"
     python plugin.py

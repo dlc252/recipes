@@ -83,6 +83,32 @@ Configura las siguientes variables de entorno en Railway:
 - Los archivos estáticos se sirven automáticamente con WhiteNoise
 - No necesitas configuración adicional
 
+### Problema con imágenes de recetas importadas
+
+Si las imágenes se muestran durante la importación pero desaparecen después:
+
+1. **Verificar el volumen de media:**
+
+   ```bash
+   python manage.py check_media_volume
+   ```
+
+2. **Diagnóstico detallado:**
+
+   ```bash
+   python debug_media_volume.py
+   ```
+
+3. **Arreglar imágenes existentes:**
+
+   ```bash
+   python manage.py fix_recipe_images --all
+   ```
+
+4. **Verificar variables de entorno:**
+   - `MEDIA_ROOT=/opt/recipes/mediafiles`
+   - `MEDIA_URL=/media/`
+
 ### Error de memoria
 
 - Railway tiene límites de memoria, considera usar un plan superior si es necesario
